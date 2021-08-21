@@ -3,7 +3,7 @@
 <?php session_start(); ?>
 <p>Login Page</p>
 
-<div class="content" "row" align="center">
+<div class="content row" align="center">
         <div class="column left" align="center" >
           <p class="pagetitle">Login</p>
           <form class="" action="processes/loginprocess.php" method="post">

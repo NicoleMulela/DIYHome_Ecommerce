@@ -1,7 +1,7 @@
 <?php require_once("processes/dbconnect.php"); ?>
 <?php include_once 'includes/header.inc.php' ?>
 <?php session_start(); ?>
-<h2>Employee Details</h2>
+
 
 <section>
       <?php
@@ -12,42 +12,55 @@
         
       ?>
         <h1>Your Products</h1>
+        <!-- Link to add new products-->
+        <div>
+            <a href="newproduct.php">Create New Product</a>
+        </div>
         <!-- Search Filter Input-->
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+        
+        
         <!-- TABLE CONSTRUCTION-->
-        <table>
-            
+        <div class="container">
+        <table class="table table-striped table-responsive-sm	">            
             <!-- PHP CODE TO FETCH DATA FROM ROWS-->
             <?php   // LOOP TILL END OF DATA 
             if (mysqli_num_rows($result) > 0) {//show table only if there are any products
             ?>
-            <tr>
-                <th>User ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Description</th>
-                <th>Manufacturer</th>
-                <th>Quantity</th>
-                <th>Price</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Manufacturer</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
             <?php    
                 while($rows = mysqli_fetch_assoc($result))
                 {
              ?>
-             
-            <tr>
-                <!--FETCHING DATA FROM EACH ROW OF EVERY COLUMN-->
-                <td><?php echo $rows['ProductID'];?></td>
-                <td><?php echo $rows['ProductName'];?></td>
-                <td><?php echo $rows['ProductID'];?></td>
-                <td><?php echo $rows['ProductDescription'];?></td>
-                <td><?php echo $rows['ProductManufacturer'];?></td>
-                <td><?php echo $rows['ProductQuantity'];?></td>
-                <td><?php echo $rows['ProductPrice'];?></td>
-            </tr>
-         </table>
-         <?php
-                }
+            
+                <tr>
+                    <!--FETCHING DATA FROM EACH ROW OF EVERY COLUMN-->
+                    <td><?php echo $rows['ProductID'];?></td>
+                    <td><?php echo $rows['ProductName'];?></td>
+                    <td><?php echo $rows['ProductID'];?></td>
+                    <td><?php echo $rows['ProductDescription'];?></td>
+                    <td><?php echo $rows['ProductManufacturer'];?></td>
+                    <td><?php echo $rows['ProductQuantity'];?></td>
+                    <td><?php echo $rows['ProductPrice'];?></td>
+                </tr>
+            
+            <?php
+                    }
+            ?>
+            </tbody>
+        </table>
+        </div>
+        <?php
               } else {
                 echo "You don\'t have any products yet";
               }
