@@ -15,44 +15,69 @@
         <!-- Link to add new products-->
         <div>
             <a href="newproduct.php">Create New Product</a>
+
         </div>
         <!-- Search Filter Input-->
         
         
         <!-- TABLE CONSTRUCTION-->
         <div class="container">
-        <table class="table table-striped table-responsive-sm	">            
+        <table class="table table-striped table-responsive-sm	"> 
+          <!-- Search bar-->
+          <div class="input-group">
+            <div class="form-outline">
+              <input id="search-input" type="search" id="form1" class="form-control " placeholder="Search..." />
+              <label class="form-label" for="form1">Search</label>
+            </div>
+          </div>
             <!-- PHP CODE TO FETCH DATA FROM ROWS-->
             <?php   // LOOP TILL END OF DATA 
             if (mysqli_num_rows($result) > 0) {//show table only if there are any products
             ?>
             <thead>
                 <tr>
-                    <th>User ID</th>
+                    <th>Item Number</th>
+                    <th>Product ID</th>
                     <th>Name</th>
                     <th>Category</th>
                     <th>Description</th>
                     <th>Manufacturer</th>
+                    <th>Image</th>
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
             </thead>
             <tbody>
-            <?php    
+            <?php   
+            $count=1; 
                 while($rows = mysqli_fetch_assoc($result))
                 {
              ?>
             
                 <tr>
                     <!--FETCHING DATA FROM EACH ROW OF EVERY COLUMN-->
+                    <td><?php echo $count; ?></td>
                     <td><?php echo $rows['ProductID'];?></td>
                     <td><?php echo $rows['ProductName'];?></td>
                     <td><?php echo $rows['ProductID'];?></td>
                     <td><?php echo $rows['ProductDescription'];?></td>
                     <td><?php echo $rows['ProductManufacturer'];?></td>
+                    <td><img src="images/<?php echo $rows['ProductImage']; ?>" width="100" height="100"></td>
                     <td><?php echo $rows['ProductQuantity'];?></td>
                     <td><?php echo $rows['ProductPrice'];?></td>
+                    <td>
+                        <a href="editproduct.php?edit=<?php echo $row['ProductID']; ?>" class="edit_btn" >Edit</a>
+                       
+                    </td>
+                    <?php
+                    echo "
+                    <td>
+                        <a href='processes/deleteproduct.php?id=$rows[ProductID]'>Delete</a>
+                    </td>
+                    ";
+                    ?>
                 </tr>
+                <?php $count++;  ?>
             
             <?php
                     }
