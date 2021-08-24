@@ -15,7 +15,7 @@ if(isset($_POST['add_product']))
   	$productImage = $_FILES['ProductImage']['name'];
   	
   	// image Path
-  	$image_Path = "../images/".basename($productImage);
+  	$image_Path = "../images/product_images/".basename($productImage);
 
 
     $id=$_SESSION['UserID'];
@@ -25,13 +25,16 @@ if(isset($_POST['add_product']))
 
     if (mysqli_query($conn,$qry)==TRUE)
     {   
+        //find better ways to store images in the website i.e. random number generating, checking if file with similar name exists
         if (move_uploaded_file($_FILES['ProductImage']['tmp_name'], $image_Path)) {
             echo'<script> alert("Your Image uploaded successfully");</script>';
         }else{
             echo '<script> alert("Not Insert Image");</script>';
         }
         echo '<script> alert("Successful");</script>';
-        session_start();
+        $_SESSION['message']="Product has been Created";
+        $_SESSION['msg_type']="success";
+        
             $url=("../product.php");
             header("location: $url");
     }

@@ -29,7 +29,7 @@
     <!--Not yet functional. Transfer of the image into the database -->
     <div class="col-6">
       <label for="ProductImage" class="form-label">Product Image</label>
-      <input type="file" class="form-control" name="ProductImage" id="ProductImage" placeholder="Manufacturer">
+      <input type="file" class="form-control" name="ProductImage" id="ProductImage" >
     </div>
     
     <div class="col-6">

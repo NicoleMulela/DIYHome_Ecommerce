@@ -9,8 +9,19 @@
       $id=$_SESSION['UserID'];
         $sql = "SELECT * FROM product WHERE UserID= '$id'";
         $result = mysqli_query($conn, $sql);
-        
       ?>
+      <?php
+      //session messages
+      if (isset($_SESSION['message'])):
+      ?>
+
+      <div class="alert alert-<?=$_SESSION['msg_type']?>">
+        <?php
+          echo $_SESSION['message'];
+          unset($_SESSION['message']);
+        ?>
+      </div>
+      <?php endif; ?>
         <h1>Your Products</h1>
         <!-- Link to add new products-->
         <div>
@@ -62,13 +73,16 @@
                     <td><?php echo $rows['ProductID'];?></td>
                     <td><?php echo $rows['ProductDescription'];?></td>
                     <td><?php echo $rows['ProductManufacturer'];?></td>
-                    <td><img src="images/<?php echo $rows['ProductImage']; ?>" width="100" height="100"></td>
+                    <td><img src="images/product_images/<?php echo $rows['ProductImage']; ?>" width="100" height="70"></td>
                     <td><?php echo $rows['ProductQuantity'];?></td>
                     <td><?php echo $rows['ProductPrice'];?></td>
+                    <?php
+                    echo "
                     <td>
-                        <a href="editproduct.php?edit=<?php echo $row['ProductID']; ?>" class="edit_btn" >Edit</a>
-                       
+                        <a href='editproduct.php?id=$rows[ProductID]'>Edit</a>
                     </td>
+                    ";
+                    ?>
                     <?php
                     echo "
                     <td>
@@ -115,5 +129,10 @@ function myFunction() {
     }
   }
 }
+//sessions time out
+setTimeout(function() {
+        let alert = document.querySelector(".alert");
+            alert.remove();
+    }, 3000);
 </script>
 <?php include_once 'includes/footer.inc.php' ?>
