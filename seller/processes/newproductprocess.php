@@ -11,10 +11,12 @@ if(isset($_POST['add_product']))
     $productCategory=$_POST['ProductCategory'];
     
     //Getting the image from the field
-    $productImage= $_FILES['ProductImage']['name'];
-    $productImageTmp= $_FILES['ProductImage']['tmp_name'];
+    // Get name of images
+  	$productImage = $_FILES['ProductImage']['name'];
+  	
+  	// image Path
+  	$image_Path = "../images/".basename($productImage);
 
-    move_uploaded_file($productImage, "images/product_images/$productImageTmp");
 
     $id=$_SESSION['UserID'];
     $qry=" INSERT INTO product(ProductName,ProductDescription,ProductPrice,ProductQuantity,ProductManufacturer,UserID,CategoryID, 
@@ -22,7 +24,12 @@ if(isset($_POST['add_product']))
     '$id','$productCategory','$productImage')";
 
     if (mysqli_query($conn,$qry)==TRUE)
-    {
+    {   
+        if (move_uploaded_file($_FILES['ProductImage']['tmp_name'], $image_Path)) {
+            echo'<script> alert("Your Image uploaded successfully");</script>';
+        }else{
+            echo '<script> alert("Not Insert Image");</script>';
+        }
         echo '<script> alert("Successful");</script>';
         session_start();
             $url=("../product.php");
