@@ -44,7 +44,7 @@
     <div class="col-6">
       <label for="ProductImage" class="form-label">Product Image</label>
       <input type="file" class="form-control" name="ProductImage" id="ProductImage" >
-      <img src="images/product_images<?php echo $fetch_product['ProductImage']; ?>" width="100" height="100">
+      <img src="images/product_images/<?php echo $fetch_product['ProductImage']; ?>" width="100" height="100">
     </div>
     
     <div class="col-6">
