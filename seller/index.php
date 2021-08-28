@@ -4,6 +4,19 @@
 
 
 <div class="container">
+    <!-- session messages--> 
+    <?php
+      //session messages
+      if (isset($_SESSION['message'])):
+    ?>
+
+      <div class="alert alert-<?=$_SESSION['msg_type']?>">
+        <?php
+          echo $_SESSION['message'];
+          unset($_SESSION['message']);
+        ?>
+      </div>
+    <?php endif; ?>
     <div class="row gutters">
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
