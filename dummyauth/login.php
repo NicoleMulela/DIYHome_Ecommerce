@@ -2,9 +2,22 @@
 <?php include_once 'includes/header.inc.php' ?>
 <?php session_start(); ?>
 <p>Login Page</p>
+<!-- session messages--> 
+<?php
+            //session messages
+            if (isset($_SESSION['message'])):
+          ?>
 
+            <div class="alert alert-<?=$_SESSION['msg_type']?>">
+              <?php
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+              ?>
+            </div>
+          <?php endif; ?>
 <div class="content row" align="center">
         <div class="column left" align="center" >
+          
           <p class="pagetitle">Login</p>
           <form class="" action="../processes/loginprocess.php" method="post">
             <input type="text" class="formInput" name="userEmail" placeholder="example@gmail.com" required><br>
