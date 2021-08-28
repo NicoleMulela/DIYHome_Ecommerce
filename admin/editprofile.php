@@ -18,15 +18,15 @@
                 <H3>Edit Profile</H3>
                 <!--Not yet functional. Transfer of the image into the database -->
                 <div class="col-6">
-                <label for="ProductImage" class="form-label">Profile Picture</label>
+                <label for="UserImage" class="form-label">Profile Picture</label>
                 <input type="file" class="form-control" name="UserImage" id="UserImage" >
-                <img src="../images/product_images/<?php echo $rows['UserImage']; ?>" width="200" height="auto">
+                <img src="../images/profile/<?php echo $rows['UserImage']; ?>" width="200" height="auto">
                 </div>
 
-                <input type="hidden" name="ProductID" value="<?php echo $rows['ProductID']?>">
+                <input type="hidden" name="UserID" value="<?php echo $rows['UserID']?>">
                 <div class="col-6">
                 <label for="UserName" class="form-label">User Name</label>
-                <input type="text" class="form-control" name="UserName" value="<?php echo $rows['UserName']?>"id="ProductName" placeholder="User Name...">
+                <input type="text" class="form-control" name="UserName" value="<?php echo $rows['UserName']?>"id="UserName" placeholder="User Name...">
                 </div>
                 <div class="col-6">
                 <label for="UserEmail" class="form-label">Email</label>

@@ -9,6 +9,7 @@
     <title>Admin Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
     <style>
         body {
   background-color: #fbfbfb;
@@ -372,14 +373,17 @@ body .fc-widget-header a {
         >
           <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Manage Profile</span>
         </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple ">
-          <i class="fas fa-chart-area fa-fw me-3"></i><span>Manage Customers</span>
+        <a href="manageclients.php" class="list-group-item list-group-item-action py-2 ripple ">
+          <i class="fas fa-chart-area fa-fw me-3"></i><span>Manage Clients</span>
         </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+        <a href="managesellers.php" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-lock fa-fw me-3"></i><span>Manage Sellers</span></a
         >
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+        <a href="manageorders.php" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-chart-line fa-fw me-3"></i><span>Manage Orders</span></a
+        >
+        <a href="../admin/manageadmin.php" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Manage Admin</span></a
         >
         <a href="../processes\logout.php" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-chart-line fa-fw me-3"></i><span>Log Out</span></a

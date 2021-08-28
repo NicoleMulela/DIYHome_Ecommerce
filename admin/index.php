@@ -40,7 +40,7 @@
             }else{
                 //echo "<img src='images/product_images/$rows['UserImage']>";
             ?>
-                <img src="../images/product_images/<?php echo $rows['UserImage']; ?>">
+                <img src="../images/profile/admin/<?php echo $rows['UserImage']; ?>">
             <?php
                 }
             ?>
