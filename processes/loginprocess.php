@@ -24,24 +24,24 @@ if($row=mysqli_fetch_array($result))
             if ($pwd==$row['UserPassword'])
       {
                   echo '<script> alert("Login Successful");</script>';
-                  session_start();
+                  
                   $_SESSION['UserID']=$row['UserID'];
                   //Successful login message
                   $_SESSION['message']="Successful login";
                   $_SESSION['msg_type']="success";
 
-                  if($row['UserRole']==admin){
+                  if($row['UserRole']=='admin'){
                   $url=("../admin/index.php");
                   header("location: $url");
-                  }elseif($row['UserRole']==seller)
+                  }elseif($row['UserRole']=='seller')
                   {
                         $url=("../seller/index.php");
                         header("location: $url");
-                  }/*elseif($row['UserRole']==customer)
+                  }elseif($row['UserRole']=='client')
                   {
                         $url=("../client/index.php");
                         header("location: $url");
-                  }*/
+                  }
       }
       }
 }
