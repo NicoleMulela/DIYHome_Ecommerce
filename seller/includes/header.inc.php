@@ -21,7 +21,7 @@
     <a class="nav-link" href="product.php">Manage Products</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link " href="processes/logout.php" tabindex="-1" aria-disabled="true">Log Out</a>
+    <a class="nav-link " href="../processes/logout.php" tabindex="-1" aria-disabled="true">Log Out</a>
   </li>
 </ul>
 <hr></hr>
