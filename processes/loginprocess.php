@@ -18,7 +18,7 @@ if($row=mysqli_fetch_array($result))
             //Wrong password message
             $_SESSION['message']="Wrong Password";
             $_SESSION['msg_type']="danger";
-            $url=("../dummyauth/login.php");
+            $url=("../auth/login.php");
             header("location: $url");
       }else{
             if ($pwd==$row['UserPassword'])
@@ -49,7 +49,7 @@ else{
       //Unsuccessful profile edit message
       $_SESSION['message']="User does not exist";
       $_SESSION['msg_type']="danger";
-      $url=("../dummyauth/login.php");
+      $url=("../auth/login.php");
       header("location: $url");
 }
 ?>
