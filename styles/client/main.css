@@ -100,7 +100,7 @@
       overflow: hidden;
   }
   .profile-header .profile-header-cover {
-    background-image: linear-gradient(to bottom right, red, yellow);
+    background-image: linear-gradient(to bottom right, #B3B3B3, #BBB891);
       background-size: 100% auto;
       position: absolute;
       left: 0;
