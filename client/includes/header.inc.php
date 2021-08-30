@@ -37,6 +37,9 @@
         <a class="nav-link "  href="profile.php" >Account</a>
       </li>
       <li class="nav-item px-2">
+        <a class="nav-link "  href="cart.php" ><i class="fas fa-shopping-cart"></i> Cart(0)</a>
+      </li>
+      <li class="nav-item px-2">
         <a class="nav-link  " href="../processes/logout.php" >Log Out</a>
       </li>
     </ul>
