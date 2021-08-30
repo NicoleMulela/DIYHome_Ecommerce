@@ -332,3 +332,10 @@
       color: #666;
       margin: 0;
   }
+
+  /*product stock */
+.product-stock{
+	color: #74DF00;
+	font-size: 20px;
+	margin-top: 10px;
+}
