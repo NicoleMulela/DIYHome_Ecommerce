@@ -5,9 +5,8 @@
     $edit_product= mysqli_query($conn, "SELECT * from product WHERE PRODUCTID= '$id'");
     $fetch_product=mysqli_fetch_array($edit_product);
 ?>
-<?php session_start(); ?>
 
-<div class="container">
+<div class="container p-4 ">
   <form action="processes/editproductprocess.php" method='post' enctype="multipart/form-data">
     <H3>Edit Product</H3>
     <input type="hidden" name="ProductID" value="<?php echo $fetch_product['ProductID']?>">
@@ -43,8 +42,25 @@
     <!--Not yet functional. Transfer of the image into the database -->
     <div class="col-6">
       <label for="ProductImage" class="form-label">Product Image</label>
-      <input type="file" class="form-control" name="ProductImage" id="ProductImage" >
-      <img src="images/product_images/<?php echo $fetch_product['ProductImage']; ?>" width="100" height="100">
+      <input type="file" class="form-control" name="ProductImage" id="ProductImage"onchange="loadFile(event)" >
+      <?php if(!empty($fetch_product['ProductImage'])){
+      ?>
+        <p>current Image:
+            <img src="images/product_images/<?php echo $fetch_product['ProductImage']; ?>" width="150" height="auto">
+        </p>
+      <?php
+      }
+      ?>      
+        <p>New Image: 
+            <img id="output" width="150" />
+        </p>
+
+      <script>
+      var loadFile = function(event) {
+          var image = document.getElementById('output');
+          image.src = URL.createObjectURL(event.target.files[0]);
+      };
+      </script> 
     </div>
     
     <div class="col-6">
@@ -64,7 +80,8 @@
       <textarea type="text" class="form-control" name="ProductDescription" id="itemDescription" cols="20" rows="10"  placeholder="Product description..."><?php echo $fetch_product['ProductDescription']?></textarea>
     </div>
     
-    <div class="col-6">
+    <div class="col-6 mt-4">
+      <a class="btn btn-secondary " href="product.php" role="button">Cancel</a>
       <button type="submit" name="edit_product" class="btn btn-primary">Edit Item</button>
     </div>
   </form>

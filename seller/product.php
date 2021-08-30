@@ -1,7 +1,5 @@
 <?php require_once("processes/dbconnect.php"); ?>
 <?php include_once 'includes/header.inc.php' ?>
-<?php session_start(); ?>
-
 
 <section>
       <?php
@@ -21,83 +19,72 @@
           unset($_SESSION['message']);
         ?>
       </div>
-      <?php endif; ?>
-        <h1>Your Products</h1>
-        <!-- Link to add new products-->
-        <div>
-            <a href="newproduct.php">Create New Product</a>
+      <?php endif; ?>   
 
-        </div>
-        <!-- Search Filter Input-->
-        
-        
         <!-- TABLE CONSTRUCTION-->
-        <div class="container">
-        <table class="table table-striped table-responsive-sm	"> 
-          <!-- Search bar-->
-          <div class="input-group">
-            <div class="form-outline">
-              <input id="search-input" type="search" id="form1" class="form-control " placeholder="Search..." />
-              <label class="form-label" for="form1">Search</label>
-            </div>
-          </div>
-            <!-- PHP CODE TO FETCH DATA FROM ROWS-->
-            <?php   // LOOP TILL END OF DATA 
-            if (mysqli_num_rows($result) > 0) {//show table only if there are any products
-            ?>
-            <thead>
-                <tr>
-                    <th>Item Number</th>
-                    <th>Product ID</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Manufacturer</th>
-                    <th>Image</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php   
-            $count=1; 
-                while($rows = mysqli_fetch_assoc($result))
-                {
-             ?>
-            
-                <tr>
-                    <!--FETCHING DATA FROM EACH ROW OF EVERY COLUMN-->
-                    <td><?php echo $count; ?></td>
-                    <td><?php echo $rows['ProductID'];?></td>
-                    <td><?php echo $rows['ProductName'];?></td>
-                    <td><?php echo $rows['ProductID'];?></td>
-                    <td><?php echo $rows['ProductDescription'];?></td>
-                    <td><?php echo $rows['ProductManufacturer'];?></td>
-                    <td><img src="images/product_images/<?php echo $rows['ProductImage']; ?>" width="100" height="70"></td>
-                    <td><?php echo $rows['ProductQuantity'];?></td>
-                    <td><?php echo $rows['ProductPrice'];?></td>
-                    <?php
-                    echo "
-                    <td>
-                        <a href='editproduct.php?id=$rows[ProductID]'>Edit</a>
-                    </td>
-                    ";
-                    ?>
-                    <?php
-                    echo "
-                    <td>
-                        <a href='processes/deleteproduct.php?id=$rows[ProductID]'>Delete</a>
-                    </td>
-                    ";
-                    ?>
-                </tr>
-                <?php $count++;  ?>
-            
-            <?php
-                    }
-            ?>
-            </tbody>
-        </table>
+        <div class="container pt-4">
+          <h3>Your Products</h3>
+          <!-- Link to add new products-->
+          <a href="newproduct.php" class="btn btn-primary mt-4">Create New Product</a>
+          <table class="table table-striped table-responsive-sm	mt-4"> 
+          
+              <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+              <?php   // LOOP TILL END OF DATA 
+              if (mysqli_num_rows($result) > 0) {//show table only if there are any products
+              ?>
+              <thead>
+                  <tr>
+                      <th>Item Number</th>
+                      <th>Product ID</th>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Description</th>
+                      <th>Manufacturer</th>
+                      <th>Image</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+              <?php   
+              $count=1; 
+                  while($rows = mysqli_fetch_assoc($result))
+                  {
+              ?>
+              
+                  <tr>
+                      <!--FETCHING DATA FROM EACH ROW OF EVERY COLUMN-->
+                      <td><?php echo $count; ?></td>
+                      <td><?php echo $rows['ProductID'];?></td>
+                      <td><?php echo $rows['ProductName'];?></td>
+                      <td><?php echo $rows['ProductID'];?></td>
+                      <td><?php echo $rows['ProductDescription'];?></td>
+                      <td><?php echo $rows['ProductManufacturer'];?></td>
+                      <td><img src="images/product_images/<?php echo $rows['ProductImage']; ?>" width="100" height="auto"></td>
+                      <td><?php echo $rows['ProductQuantity'];?></td>
+                      <td><?php echo $rows['ProductPrice'];?></td>
+                      <?php
+                      echo "
+                      <td>
+                          <a href='editproduct.php?id=$rows[ProductID]'>Edit</a>
+                      </td>
+                      ";
+                      ?>
+                      <?php
+                      echo "
+                      <td>
+                          <a href='processes/deleteproduct.php?id=$rows[ProductID]'>Delete</a>
+                      </td>
+                      ";
+                      ?>
+                  </tr>
+                  <?php $count++;  ?>
+              
+              <?php
+                      }
+              ?>
+              </tbody>
+          </table>
         </div>
         <?php
               } else {
