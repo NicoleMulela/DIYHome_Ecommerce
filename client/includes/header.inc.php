@@ -28,7 +28,7 @@
   
     <ul class="nav justify-content-end">
       <li class="nav-item px-2">
-        <a class=" nav-link "  href="index.php" >Home</a>
+        <a class=" nav-link "  href="profile.php" >Home</a>
       </li>
       <li class="nav-item px-2">
         <a class=" nav-link "  href="product.php" >Product</a>

@@ -28,8 +28,8 @@
         ?>
 
             <div class="col-md-3 col-sm-6">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> <img src="../images/product_images/<?php echo $rows['ProductImage']; ?>" width="250" height="auto"></div>
+                <figure class="card card-product-grid" style="height: 27rem;">
+                    <div class="img-wrap"> <img src="../seller/images/product_images/<?php echo $rows['ProductImage']; ?>" width="250" height="250"></div>
                     <figcaption class="info-wrap border-top m-3">
                         <p><?php echo $rows['ProductName']; ?></p>
                         <div class="price mt-2">Ksh <?php echo $rows['ProductPrice']; ?> </div> <!-- price-wrap.// -->

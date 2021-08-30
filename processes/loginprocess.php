@@ -39,7 +39,7 @@ if($row=mysqli_fetch_array($result))
                         header("location: $url");
                   }elseif($row['UserRole']=='client')
                   {
-                        $url=("../client/index.php");
+                        $url=("../client/profile.php");
                         header("location: $url");
                   }
       }
