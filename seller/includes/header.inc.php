@@ -14,18 +14,23 @@
     
 </head>
 <body>
-<ul class="nav justify-content-end">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="index.php">My Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="order.php">Manage Orders</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="product.php">Manage Products</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link " href="../processes/logout.php" tabindex="-1" aria-disabled="true">Log Out</a>
-  </li>
-</ul>
-<hr></hr>
+  <nav class="navbar navbar-default ">
+    <div class="container-fluid">
+      <img src="../seller/images/diyhome_logo.png" width="70" height="auto" alt="">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">My Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="order.php">Manage Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="product.php">Manage Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="../processes/logout.php" tabindex="-1" aria-disabled="true">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<hr class="m-0"></hr>
