@@ -100,7 +100,7 @@
       overflow: hidden;
   }
   .profile-header .profile-header-cover {
-      background: url(https://bootdey.com/img/Content/bg1.jpg) center no-repeat;
+    background-image: linear-gradient(to bottom right, red, yellow);
       background-size: 100% auto;
       position: absolute;
       left: 0;
