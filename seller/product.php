@@ -43,6 +43,7 @@
                       <th>Image</th>
                       <th>Quantity</th>
                       <th>Price</th>
+                      <th colspan="2">Action</th>
                   </tr>
               </thead>
               <tbody>

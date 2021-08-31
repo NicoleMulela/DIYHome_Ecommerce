@@ -80,7 +80,7 @@
       <textarea type="text" class="form-control" name="ProductDescription" id="itemDescription" cols="20" rows="10"  placeholder="Product description..."><?php echo $fetch_product['ProductDescription']?></textarea>
     </div>
     
-    <div class="col-6 mt-4">
+    <div class="col-6 m-4">
       <a class="btn btn-secondary " href="product.php" role="button">Cancel</a>
       <button type="submit" name="edit_product" class="btn btn-primary">Edit Item</button>
     </div>

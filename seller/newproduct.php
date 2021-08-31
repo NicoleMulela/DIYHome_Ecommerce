@@ -1,6 +1,6 @@
 <?php require_once("processes/dbconnect.php"); ?>
 <?php include_once 'includes/header.inc.php' ?>
-<?php session_start(); ?>
+
 
 <div class="container">
   <form action="processes/newproductprocess.php" method='post' enctype="multipart/form-data">
@@ -49,7 +49,8 @@
       <textarea type="text" class="form-control" name="ProductDescription" id="itemDescription" cols="20" rows="10" placeholder="Product description..."></textarea>
     </div>
     
-    <div class="col-6">
+    <div class="col-6 m-4">
+      <a class="btn btn-secondary " href="product.php" role="button">Cancel</a>
       <button type="submit" name="add_product" class="btn btn-primary">Add Item</button>
     </div>
   </form>
