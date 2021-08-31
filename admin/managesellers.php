@@ -61,12 +61,12 @@
                     <td><?php echo $rows['UserName'];?></td>
                     <td><?php echo $rows['UserEmail'];?></td>
                     <td><?php echo $rows['UserPhone'];?></td>
-                    <td><img src="../images/profile/admin/<?php echo $rows['UserImage']; ?>" width="auto" height="100"></td>
+                    <td><img src="../seller/images/profile/<?php echo $rows['UserImage']; ?>" width="auto" height="100"></td>
                     <td><?php echo $rows['createdDate'];?></td>
                     <?php
                     echo "
                     <td>
-                        <a href='orderdetails.php?id=$rows[UserID]'>Details</a>
+                        <a href='#'>Details</a>
                     </td>
                     ";
                     ?>

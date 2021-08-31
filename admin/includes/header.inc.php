@@ -125,7 +125,7 @@ body{
     overflow: hidden;
 }
 .profile-header .profile-header-cover {
-    background: url(https://bootdey.com/img/Content/bg1.jpg) center no-repeat;
+  background-image: linear-gradient(to bottom right, #B3B3B3, #BBB891);
     background-size: 100% auto;
     position: absolute;
     left: 0;
@@ -379,9 +379,9 @@ body .fc-widget-header a {
         <a href="managesellers.php" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-lock fa-fw me-3"></i><span>Manage Sellers</span></a
         >
-        <a href="manageorders.php" class="list-group-item list-group-item-action py-2 ripple"
+        <!--<a href="manageorders.php" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-chart-line fa-fw me-3"></i><span>Manage Orders</span></a
-        >
+        >-->
         <a href="../admin/manageadmin.php" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-chart-line fa-fw me-3"></i><span>Manage Admin</span></a
         >
@@ -412,8 +412,8 @@ body .fc-widget-header a {
       <!-- Brand -->
       <a class="navbar-brand" href="#">
         <img
-          src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
-          height="25"
+          src="../images/diyhome_logo.png"
+          width="60" height="auto"
           alt=""
           loading="lazy"
         />

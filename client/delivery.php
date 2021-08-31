@@ -85,12 +85,8 @@
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <?php
-                        //Successful profile edit message
-                        $_SESSION['message']="Your Order has been Recorded";
-                        $_SESSION['msg_type']="success";
-                    ?>
-                    <a href="order.php" class="btn btn-primary btn-block col-6 mt-4">Place Order</a>
+                    
+                    <a href="order.php" name="order" class="btn btn-primary btn-block col-6 mt-4">Place Order</a>
                     <a href="product.php" class="btn  btn-outline-secondary mt-2"> <span class="text">Continue Shopping</span></a>
                 </div>
             </div>
