@@ -58,7 +58,7 @@ if(empty($_SESSION["shopping_cart"])) {
 ?>
 <?php
     $id = $_GET['id'];
-    $select_product= mysqli_query($conn, "SELECT * from product WHERE PRODUCTID= '$id'");
+    $select_product= mysqli_query($conn, "SELECT * from product WHERE ProductID= '$id'");
     $fetch_product=mysqli_fetch_array($select_product);
 
     //Check Product Stock

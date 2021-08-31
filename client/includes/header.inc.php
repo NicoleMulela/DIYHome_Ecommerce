@@ -41,7 +41,7 @@
         $cart_count = count(array_keys($_SESSION["shopping_cart"]));
       ?>
       <li class="nav-item px-2">
-        <a class="nav-link "  href="cart.php" ><i class="fas fa-shopping-cart"></i> Cart(<?php echo $cart_count; ?>)</a>
+        <a class="nav-link "  href="cart.php" ><i class="fas fa-shopping-cart"></i> Cart<?php //echo $cart_count; ?></a>
       </li>
       <?php
        }else{
