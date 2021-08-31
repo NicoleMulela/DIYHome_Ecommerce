@@ -33,7 +33,7 @@
             <div class="col-2">
                 <nav class="nav flex-column">
                     <a class="nav-link active" href="profile.php">My Profile</a>
-                    <a class="nav-link" href="#">My Orders</a>
+                    <a class="nav-link" href="order.php">My Orders</a>
                 </nav>
             </div>
             <div class="col-sm">

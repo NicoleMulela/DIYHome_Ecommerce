@@ -13,7 +13,7 @@
                 unset($_SESSION['message']);
               ?>
             </div>
-          <?php endif; ?>
+<?php endif; ?>
 
 <section class="vh-100 pt-4 container">
 <div class="row">

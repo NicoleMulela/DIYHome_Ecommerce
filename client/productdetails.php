@@ -15,6 +15,48 @@
 </div>
 <?php endif; ?>
 <?php
+$status="";
+if (isset($_POST['code']) && $_POST['code']!=""){
+$code = $_POST['code'];
+$result = mysqli_query(
+$con,
+"SELECT * FROM `products` WHERE `code`='$code'"
+);
+$row = mysqli_fetch_assoc($result);
+$name = $row['name'];
+$code = $row['code'];
+$price = $row['price'];
+$image = $row['image'];
+
+$cartArray = array(
+	$code=>array(
+	'name'=>$name,
+	'code'=>$code,
+	'price'=>$price,
+	'quantity'=>1,
+	'image'=>$image)
+);
+
+if(empty($_SESSION["shopping_cart"])) {
+    $_SESSION["shopping_cart"] = $cartArray;
+    $status = "<div class='box'>Product is added to your cart!</div>";
+}else{
+    $array_keys = array_keys($_SESSION["shopping_cart"]);
+    if(in_array($code,$array_keys)) {
+	$status = "<div class='box' style='color:red;'>
+	Product is already added to your cart!</div>";	
+    } else {
+    $_SESSION["shopping_cart"] = array_merge(
+    $_SESSION["shopping_cart"],
+    $cartArray
+    );
+    $status = "<div class='box'>Product is added to your cart!</div>";
+	}
+
+	}
+}
+?>
+<?php
     $id = $_GET['id'];
     $select_product= mysqli_query($conn, "SELECT * from product WHERE PRODUCTID= '$id'");
     $fetch_product=mysqli_fetch_array($select_product);
@@ -38,7 +80,7 @@
 		<aside class="col-md-6">
             <article class="gallery-wrap">
             <div class="img-big-wrap">
-            <div><img src="../images/product_images/<?php echo $fetch_product['ProductImage']?>"></div>
+            <div><img src="../seller/images/product_images/<?php echo $fetch_product['ProductImage']?>" class="rounded mx-auto d-block" width="250" height="auto"></div>
             </div> <!-- slider-product.// -->
             </article> <!-- gallery-wrap .end// -->
 		</aside>
